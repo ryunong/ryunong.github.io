@@ -1,1 +1,243 @@
-박거노무현
+아래 코드를 `index.html`로 저장해서 열면 돼요. 이름과 소개, 이메일만 바꿔 쓰세요. ✨
+
+```html
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>나를 소개합니다</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap');
+
+    :root {
+      color-scheme: dark;
+      --bg: #101110;
+      --card: #1b1d1a;
+      --text: #f3f5ed;
+      --muted: #a3aa9c;
+      --accent: #d0ff71;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: "Noto Sans KR", sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: inherit; }
+
+    .page {
+      max-width: 960px;
+      margin: auto;
+      padding: 32px 24px 24px;
+    }
+
+    nav, footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo { font-weight: 900; letter-spacing: -1px; }
+    .logo span { color: var(--accent); }
+
+    .status {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .status::before {
+      content: "";
+      width: 7px;
+      height: 7px;
+      background: var(--accent);
+      border-radius: 50%;
+      box-shadow: 0 0 14px #d0ff7150;
+    }
+
+    header { padding: 90px 0 48px; }
+
+    .eyebrow {
+      color: var(--accent);
+      font-size: 12px;
+      letter-spacing: 3px;
+      font-weight: 700;
+    }
+
+    h1 {
+      margin: 18px 0 24px;
+      font-size: clamp(42px, 7vw, 76px);
+      line-height: 1.2;
+      letter-spacing: -3px;
+    }
+
+    h1 span { color: var(--accent); }
+
+    .intro {
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.9;
+      word-break: keep-all;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr;
+      gap: 16px;
+    }
+
+    .card {
+      padding: 30px;
+      border: 1px solid #ffffff0d;
+      border-radius: 26px;
+      background: var(--card);
+    }
+
+    .label {
+      margin: 0 0 24px;
+      color: var(--muted);
+      font-size: 11px;
+      letter-spacing: 2px;
+    }
+
+    h2 {
+      margin: 0 0 14px;
+      font-size: 23px;
+      letter-spacing: -1px;
+    }
+
+    .card p:not(.label) {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.9;
+      word-break: keep-all;
+    }
+
+    .tags { display: flex; flex-wrap: wrap; gap: 8px; }
+
+    .tag {
+      padding: 9px 14px;
+      border: 1px solid #ffffff18;
+      border-radius: 100px;
+      font-size: 13px;
+    }
+
+    .contact {
+      grid-column: 1 / -1;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      background: var(--accent);
+      color: #18200e;
+    }
+
+    .contact .label { margin-bottom: 12px; color: #46582c; }
+    .contact h2 { margin: 0; }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      gap: 24px;
+      flex-shrink: 0;
+      padding: 16px 22px;
+      border-radius: 100px;
+      background: #18200e;
+      color: var(--accent);
+      text-decoration: none;
+      font-size: 14px;
+      transition: transform .2s, background .2s;
+    }
+
+    .button:hover { transform: translateY(-3px); background: #2c391b; }
+    .button:focus-visible { outline: 3px solid #18200e; outline-offset: 4px; }
+
+    footer {
+      gap: 16px;
+      padding: 30px 0 8px;
+      color: var(--muted);
+      font-size: 11px;
+    }
+
+    @media (max-width: 600px) {
+      header { padding-top: 64px; }
+      .grid { grid-template-columns: 1fr; }
+      .card { padding: 26px; }
+      .contact { align-items: flex-start; flex-direction: column; }
+      h1 { letter-spacing: -2px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .button { transition: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <nav aria-label="사이트 소개">
+      <a class="logo" href="#" style="text-decoration: none;">MINJI<span>.</span></a>
+      <span class="status">새로운 연결을 환영해요</span>
+    </nav>
+
+    <main>
+      <header>
+        <div class="eyebrow">HELLO, WORLD ✳</div>
+        <h1>좋아하는 것을<br />만들어가는 <span>김민지.</span></h1>
+        <p class="intro">
+          작은 호기심에서 시작해 새로운 경험을 만듭니다.<br />
+          디자인과 기술, 그리고 일상의 좋은 순간들을 좋아해요.
+        </p>
+      </header>
+
+      <div class="grid">
+        <section class="card">
+          <p class="label">01 / ABOUT ME</p>
+          <h2>조금씩, 꾸준히 앞으로.</h2>
+          <p>
+            서울에서 공부하고 만드는 사람입니다.
+            복잡한 것을 쉽게 풀어내는 일에 관심이 많아요.
+            쉬는 날에는 카페를 찾아다니고 사진을 찍습니다.
+          </p>
+        </section>
+
+        <section class="card">
+          <p class="label">02 / THINGS I LOVE</p>
+          <h2>요즘의 관심사</h2>
+          <div class="tags">
+            <span class="tag">🎨 디자인</span>
+            <span class="tag">💻 코딩</span>
+            <span class="tag">📷 사진</span>
+            <span class="tag">☕ 커피</span>
+            <span class="tag">🎧 음악</span>
+          </div>
+        </section>
+
+        <section class="card contact">
+          <div>
+            <p class="label">03 / SAY HELLO</p>
+            <h2>우리, 재미있는 이야기 해요.</h2>
+          </div>
+          <a class="button" href="mailto:hello@example.com">
+            메일 보내기 <span aria-hidden="true">↗</span>
+          </a>
+        </section>
+      </div>
+    </main>
+
+    <footer>
+      <span>© 2026 MINJI</span>
+      <span>호기심으로 채워가는 공간 ✳</span>
+    </footer>
+  </div>
+</body>
+</html>
+```
